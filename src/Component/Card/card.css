@@ -1,0 +1,12 @@
+#main{
+    background: linear-gradient(to bottom, #9b46c1, #4460d3);
+}
+#font{
+     
+}
+.MuiTypography-root{
+    font-size: 19px !important;
+    font-weight: 700 !important;
+}
+.MuiSvgIcon-root{ 
+}

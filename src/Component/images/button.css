@@ -1,0 +1,35 @@
+.button1 {
+    position: fixed;
+    bottom: 8%;
+    right: 7%; 
+    width: 150px;
+    height: 90px;
+    border-radius: 45%;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 2px 5px black;
+}
+.button1{
+      font-size:20px;
+      font-weight: 600;
+      background-color: yellow;
+      color: rgb(8, 12, 255);
+      border: 2px solid yellow;
+      text-shadow: 2px 2px 9px rgb(27, 106, 196);
+      animation: anim 2s infinite alternate;
+    }
+   
+     .button1:hover{
+         cursor: pointer;
+        }
+
+        @keyframes anim {
+            0%{
+                 transform: scale(1);
+            }
+            100%{
+                transform: scale(1.1);
+            }
+        }

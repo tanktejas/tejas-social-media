@@ -10,14 +10,14 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <div className="pages">
+        
           <Routes>
             <Route path="/about" element={<Images />} />
             {/* <Route exact path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} /> */}
           </Routes>
-        </div>
+      
       </BrowserRouter>
     </>
   );
