@@ -1,6 +1,7 @@
 .button1 {
     position: fixed;
-    bottom: 8%;
+    /* bottom: 35%; */
+    top: 80vh;
     right: 7%; 
     width: 150px;
     height: 90px;

@@ -1,0 +1,197 @@
+ 
+.header{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, #0b0a0af0, #151111f7);
+    background: url('../images/back.jpg');
+    background-position: cover;
+    background-size: 100% 100%;     
+      object-fit: cover;
+      height: 90vh;
+    background-repeat: no-repeat;
+}
+.header{
+    backdrop-filter: blur(15px);
+}
+.header .cont{
+    padding: 11px;
+    max-width: 744px;
+}
+.cont h1{
+  font-size: 44px; 
+}
+.cont h1,
+.cont p{
+    padding: 12px;
+    font-weight: 700;
+    text-shadow: 5px 6px 5px rgb(18, 10, 10);
+}
+.cont p{
+    font-size: 24px;
+}
+ 
+*::selection{
+    text-shadow: none;
+     background-color: rgb(212, 211, 211);
+    color: rgba(4, 39, 194, 0.589);
+}
+.header div{
+    color: rgb(235, 147, 93);    
+    margin: 12px;
+    margin-top: 265px;
+}
+.q span{
+    padding-left: 23px;
+}
+.img img{
+    max-width: 381px;
+    height: 275px; 
+    border-radius: 23px;  
+} 
+ .t1{
+    padding-bottom: 37px;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+} 
+.rric{
+    float: right;
+}
+.fa-chart-line{
+    color: greenyellow;
+}
+@media (max-width:430px) {
+    .fa-chart-line{
+    margin-top: 14px;
+    }
+}
+.fa-chart-line-down{
+    color:  rgba(255, 0, 0, 0.938); 
+}
+.fa-code{
+    color: greenyellow;
+}
+.fa-camera{
+   color: rgb(124, 104, 104);
+}
+.iicdown{
+    float: right;
+}
+.fa-js{
+  color: yellow;
+}
+.fa-node{
+    color: rgb(11, 255, 11);
+}
+.fa-react{
+    color: rgb(21, 255, 243);
+}
+.fa-browser{
+    color: rgb(221, 49, 255);
+}
+.fa-head-side-brain{
+    color:  rgb(13, 199, 59);
+}
+.fa-robot{
+    color: rgb(255, 147, 6);
+}
+.q{
+    width:650px;
+    background-color: black;
+    margin: 0px 29px;
+    color: white;
+    height: 50px;
+    font-size: 30px;
+    padding: 1px 40px;
+    border-radius: 10px;
+    margin-top: 15px;
+
+ }
+ .home{
+    background: linear-gradient(to bottom, #0b0a0af0, #151111f7);
+    width: 100%;
+ }
+ .q:hover{
+     cursor: pointer;
+     border:1px solid rgb(31, 232, 247);
+     box-shadow: 1px 1px 4px rgb(31, 232, 247);
+     transform: scale(1.03); 
+ }
+.topics{
+    margin-top: 13px;
+     
+}
+ .tranding-topics h1,
+ .total-amount h1{
+  
+    padding-top: 29px;
+    text-align: center;
+    background: url('../images/fir-burn.jpg') repeat-x;
+    background-size: contain;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 44px;
+    color: rgba(255, 255, 255, 0.2);
+    animation: fire 4s linear infinite;
+    transform: translateZ(12px);
+    text-shadow: 7px 12px 13px #4b3823;
+    transform-style: preserve-3d;
+    transform: translate(12px);
+ }
+ canvas{
+     padding-bottom: 26px;
+ }
+@media (max-width:940px) {
+
+    .header{
+        background-size: 210% 122%;
+        background-position: center;
+        flex-wrap: wrap-reverse;
+    }
+    .header div{
+        padding: 0px !important;
+        margin-top: 106px
+    }
+    
+    .img img{
+        max-width: 315px;
+    }
+   .q{
+       width: 521px;
+   }
+}
+@media (max-width:568px) {
+    .header{
+        height: auto !important;
+        background-size: 389% 108%;
+    }
+    .q{
+        width: 394px;
+        font-size: 27px;   
+    }
+}
+
+@media (max-width:463px) {
+    .total-amount h1{
+        font-size: 31px !important;
+    }
+    .tranding-topics h1{
+        font-size: 26px !important;
+    }
+    .cont h1{
+        font-size: 38px;
+        padding: 14px;
+   }
+   .cont p{
+    font-size: 108%;
+   }
+   .q{
+    width: 295px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+}

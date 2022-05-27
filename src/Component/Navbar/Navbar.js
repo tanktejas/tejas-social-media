@@ -3,13 +3,31 @@ import reactdom from "react-dom";
 import "./Navbar.css";
 import logo from "../Navbar/logo (2).png";
 import { NavLink } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 
 //Pages
 function NavBar() {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
   const [click, setClick] = React.useState(false);
-
+  const { logout } = useAuth0();
+  const { user } = useAuth0();
   const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
+  const [islogin, setIs] = useState(false);
+
+  useEffect(async () => {
+    const usercookie = await Cookies.get("name1");
+
+    if (user == undefined) {
+      console.log("heyy.. I gonna do login.");
+      // setIs(true);
+      console.log(user);
+      // loginWithRedirect();
+    }
+  }, []);
 
   return (
     <div>
@@ -46,7 +64,7 @@ function NavBar() {
                 Images
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 exact
                 to="/blog"
@@ -56,7 +74,7 @@ function NavBar() {
               >
                 Video
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink
                 exact
@@ -68,28 +86,69 @@ function NavBar() {
                 Contact Us
               </NavLink>
             </li>
-            <li className="nav-item losi">
-              <NavLink
-                exact
-                to="/log-in"
-                activeClassName="active"
-                className="nav-links"
-                onClick={click ? handleClick : null}
-              >
-                Log-in
-              </NavLink>
-            </li>
-            <li className="nav-item losi">
-              <NavLink
-                exact
-                to="/Sign-in"
-                activeClassName="active"
-                className="nav-links"
-                onClick={click ? handleClick : null}
-              >
-                Sign-in
-              </NavLink>
-            </li>
+            {!isAuthenticated && (
+              <li className="nav-item losi">
+                <NavLink
+                  exact
+                  to="/log-in"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={() => {
+                    loginWithRedirect();
+                    // Cookies.set("name", "tejas");
+                    // const name = user.name;
+                    // console.log(name + "jbkjgsdvsdklhkjfjdkfa");
+                    Cookies.set("name1", user.name, { expires: 4 });
+                    Cookies.set("islog", "yes", { expires: 4 });
+                  }}
+                >
+                  Log-in
+                </NavLink>
+              </li>
+            )}
+            {isAuthenticated && (
+              <li className="nav-item losi">
+                <NavLink
+                  exact
+                  to="/log-in"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={() => logout()}
+                >
+                  Log-out ({user.nickname})
+                </NavLink>
+              </li>
+            )}
+            {!isAuthenticated && (
+              <li className="nav-item losi">
+                <NavLink
+                  exact
+                  to="/Sign-in"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Sign-in
+                </NavLink>
+              </li>
+            )}
+            {isAuthenticated && (
+              <li className="nav-item losi">
+                <NavLink
+                  exact
+                  to="/Sign-in"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={() => {
+                    window.location.replace(
+                      `https://lighthearted-vacherin-dd2359.netlify.app//#/${user.email}/Dashboard`
+                    );
+                  }}
+                >
+                  View-profile
+                </NavLink>
+              </li>
+            )}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fa fa-times" : "fa fa-bars"}></i>

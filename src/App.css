@@ -6,6 +6,21 @@
   height: 40vmin;
   pointer-events: none;
 }
+.root1{
+  /* background-image: url('./Images/background11.jpg') !important; */
+  /* background-size: 100% 100%; */
+  min-height: 100vh;
+  
+backdrop-filter: contrast(.8);
+  width: 99vw;
+  padding-top: 1px;
+  background-position: center !important;
+  margin-top: 0px !important;
+  /* background-size: cover; */
+}
+.fa-star{
+  color:  yellow;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

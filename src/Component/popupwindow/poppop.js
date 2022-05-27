@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <Modal isOpen={this.props.state} onClose={() => this.closeModal()}>
-          <CardProfile />
+          <CardProfile user={this.props.user} />
         </Modal>
       </div>
     );
@@ -28,7 +28,7 @@ class Modal extends React.Component {
 
     return (
       <div>
-        <div className="modal">{this.props.children}</div>
+        <div className="modal1">{this.props.children}</div>
         <div className="bg" onClick={(e) => this.close(e)} />
       </div>
     );
