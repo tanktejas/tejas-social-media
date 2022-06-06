@@ -21,12 +21,61 @@ function App() {
       loginWithRedirect();
     }
   }
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, loginWithPopup } = useAuth0();
 
   useEffect(() => {
-    const currstatus = Cookies.get("islog");
-    if (performance.navigation.type == 1 && currstatus == "yes") {
-      Cookies.set("islog", "no");
+    const isloginthisuser = Cookies.get("islog");
+    const isneedtologin = Cookies.get("isneedtologin");
+
+    setTimeout(() => {
+      if (isneedtologin != "no" && isloginthisuser == "ok") {
+        loginWithRedirect();
+        var date = new Date();
+        Cookies.set("islog", "ok", {
+          expires: 1,
+        });
+
+        let datenow = date.getDate();
+        let month = date.getMonth();
+        let yr = date.getFullYear();
+        let hour = date.getHours();
+        let minu = date.getMinutes();
+        const arr = [
+          "Jan",
+          "Feb",
+          "March",
+          "April",
+          "Jun",
+          "July",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        if (minu >= 58) {
+          hour += 1;
+          minu = 0;
+        }
+        hour -= 5;
+        minu -= 31;
+        if (minu < 0) {
+          minu = 60 + minu;
+          hour--;
+
+          if (hour < 0) {
+            hour = 24 + hour;
+            minu = 0;
+          }
+        }
+        console.log(hour);
+        document.cookie = `isneedtologin=no; expires=Mon, ${datenow}-${
+          arr[month - 1]
+        }-${yr} ${hour}:${minu + 2}:00 GMT`;
+      }
+    }, 5000);
+    if (isloginthisuser != undefined && isneedtologin == undefined) {
+      // loginWithRedirect();
     }
   }, []);
 
