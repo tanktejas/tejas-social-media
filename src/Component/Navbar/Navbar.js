@@ -101,45 +101,6 @@ function NavBar() {
                     Cookies.set("islog", "ok", {
                       expires: 1,
                     });
-
-                    // let datenow = date.getDate();
-                    // let month = date.getMonth();
-                    // let yr = date.getFullYear();
-                    // let hour = date.getHours();
-                    // let minu = date.getMinutes();
-                    // const arr = [
-                    //   "Jan",
-                    //   "Feb",
-                    //   "March",
-                    //   "April",
-                    //   "Jun",
-                    //   "July",
-                    //   "Aug",
-                    //   "Sep",
-                    //   "Oct",
-                    //   "Nov",
-                    //   "Dec",
-                    // ];
-                    // if (minu >= 58) {
-                    //   hour += 1;
-                    //   minu = 0;
-                    // }
-                    // hour -= 5;
-                    // minu -= 31;
-                    // if (minu < 0) {
-                    //   minu = 60 + minu;
-                    //   hour--;
-
-                    //   if (hour < 0) {
-                    //     hour = 24 + hour;
-                    //     minu = 0;
-                    //   }
-                    // }
-                    // console.log(hour);
-                    // document.cookie = `isneedtologin=no; expires=Mon, ${datenow}-${
-                    //   arr[month - 1]
-                    // }-${yr} ${hour}:${minu + 2}:00 GMT`;
-                    // alert(document.cookie.at(0));
                   }}
                 >
                   Log-in
@@ -153,7 +114,13 @@ function NavBar() {
                   to="/log-in"
                   activeClassName="active"
                   className="nav-links"
-                  onClick={() => logout()}
+                  onClick={() => {
+                    logout();
+                    document.cookie =
+                      "islog=12; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie =
+                      "isneedtologin=12; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                  }}
                 >
                   Log-out ({user.nickname})
                 </NavLink>

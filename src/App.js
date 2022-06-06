@@ -28,7 +28,11 @@ function App() {
     const isneedtologin = Cookies.get("isneedtologin");
 
     setTimeout(() => {
-      if (isneedtologin != "no" && isloginthisuser == "ok") {
+      if (
+        isneedtologin != "no" &&
+        isloginthisuser == "ok" &&
+        !isAuthenticated
+      ) {
         loginWithRedirect();
         var date = new Date();
         Cookies.set("islog", "ok", {

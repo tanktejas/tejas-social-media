@@ -163,7 +163,7 @@ class CardProfile extends React.Component {
         //   setSuccess("Image upload successfully");
         // }
       });
-      window.location.replace("https://tejas-social-media.netlify.app/");
+      window.location.replace("https://social-media-frontend-ochre.vercel.app/");
     }
   };
 
