@@ -21,18 +21,15 @@ function App() {
       loginWithRedirect();
     }
   }
-  const { loginWithRedirect, isAuthenticated, loginWithPopup } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, loginWithPopup, user } =
+    useAuth0();
 
   useEffect(() => {
     const isloginthisuser = Cookies.get("islog");
     const isneedtologin = Cookies.get("isneedtologin");
 
     setTimeout(() => {
-      if (
-        isneedtologin != "no" &&
-        isloginthisuser == "ok" &&
-        !isAuthenticated
-      ) {
+      if (isneedtologin != "no" && isloginthisuser == "ok" && !user) {
         loginWithRedirect();
         var date = new Date();
         Cookies.set("islog", "ok", {

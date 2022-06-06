@@ -133,7 +133,16 @@ function NavBar() {
                   to="/Sign-in"
                   activeClassName="active"
                   className="nav-links"
-                  onClick={() => loginWithRedirect()}
+                  onClick={() => {
+                    loginWithRedirect();
+                    // Cookies.set("name", "tejas");
+                    // const name = user.name;
+                    // console.log(name + "jbkjgsdvsdklhkjfjdkfa");
+
+                    Cookies.set("islog", "ok", {
+                      expires: 1,
+                    });
+                  }}
                 >
                   Sign-in
                 </NavLink>
