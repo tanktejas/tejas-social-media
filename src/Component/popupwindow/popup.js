@@ -159,7 +159,7 @@ class CardProfile extends React.Component {
         // then print response status
         console.warn(res);
 
-        window.location.replace("http://localhost:3000/about");
+        window.location.replace("https://tejas-social-media-app.vercel.app/about");
         // if (res.data.success === 1) {
         //   setSuccess("Image upload successfully");
         // }
