@@ -159,11 +159,12 @@ class CardProfile extends React.Component {
         // then print response status
         console.warn(res);
 
+        window.location.replace("http://localhost:3000/about");
         // if (res.data.success === 1) {
         //   setSuccess("Image upload successfully");
         // }
       });
-      window.location.replace("https://social-media-frontend-ochre.vercel.app/");
+      // window.location.replace("https://social-media-frontend-ochre.vercel.app/");
     }
   };
 

@@ -68,9 +68,9 @@ function Images() {
               );
             })}
           </div>
-          <Bottom state={stateforadd} setstate={setadd} />
           <Poppop state={stateforadd} setstate={setadd} user={user} />
         </div>
+        <Bottom state={stateforadd} setstate={setadd} />
       </>
     );
   }
