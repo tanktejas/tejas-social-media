@@ -157,7 +157,7 @@ function NavBar() {
                   className="nav-links"
                   onClick={() => {
                     window.location.replace(
-                      `https://lighthearted-vacherin-dd2359.netlify.app//#/${user.email}/Dashboard`
+                      `https://sparkling-brioche-6ef7fe.netlify.app/#/${user.email}/Dashboard`
                     );
                   }}
                 >
