@@ -11,7 +11,7 @@ function Home() {
     return a.count > b.count;
   }
   useEffect(() => {
-    fetch("https://md112.herokuapp.com/alltop5user", {
+    fetch("https://apptej.herokuapp.com/alltop5user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

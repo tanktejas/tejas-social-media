@@ -152,14 +152,16 @@ class CardProfile extends React.Component {
       // call to s3 server image
       axios({
         method: "POST",
-        url: "https://md112.herokuapp.com/upload",
+        url: "https://apptej.herokuapp.com/upload",
         data: obj,
         headers: { "Content-Type": "multipart/form-data" },
       }).then((res) => {
         // then print response status
         console.warn(res);
 
-        window.location.replace("https://tejas-social-media-app.vercel.app/about");
+        window.location.replace(
+          "https://tejas-social-media-app.vercel.app/about"
+        );
         // if (res.data.success === 1) {
         //   setSuccess("Image upload successfully");
         // }

@@ -10,7 +10,7 @@ function Navbar() {
   useEffect(() => {
     if (user != undefined) {
       console.log(user);
-      fetch("https://md112.herokuapp.com/loginuser", {
+      fetch("https://apptej.herokuapp.com/loginuser", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

@@ -14,6 +14,7 @@ import Cookies from "js-cookie";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 
+import Video from "./Component/videos/images";
 function App() {
   function fun() {
     const ddd = Cookies.get("name1");
@@ -97,6 +98,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<Images />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/videos" element={<Video />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

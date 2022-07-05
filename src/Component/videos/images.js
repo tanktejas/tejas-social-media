@@ -7,7 +7,9 @@ import Bottom from "./bottom_add_button";
 import "./images.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
-function Images() {
+import Pop from "./pop";
+
+function Video() {
   const { user } = useAuth0();
 
   const [arr_of_img, setarr] = useState([]);
@@ -48,6 +50,7 @@ function Images() {
     if (user != undefined && user != curruser) {
       setcurruser(user);
     }
+    console.log(status);
     return (
       <>
         <div className="root1">
@@ -68,12 +71,12 @@ function Images() {
               );
             })}
           </div>
-          <Poppop state={stateforadd} setstate={setadd} user={user} />
         </div>
-        <Bottom state={stateforadd} setstate={setadd} />
+        <Pop state={stateforadd} setstate={setadd} />
+        {/* <Bottom state={stateforadd} setstate={setadd} /> */}
       </>
     );
   }
 }
 
-export default Images;
+export default Video;

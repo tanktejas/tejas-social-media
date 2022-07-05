@@ -76,7 +76,7 @@ export default function RecipeReviewCard({
     console.log("as");
     setExpanded(!expanded);
   };
-  const url = `https://md112.herokuapp.com/${img}`;
+  const url = `https://apptej.herokuapp.com/${img}`;
   const [anchorEl, setAnchorEl] = React.useState(false);
   const open = Boolean(anchorEl);
 

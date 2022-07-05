@@ -14,7 +14,7 @@ function Contact() {
       message: msg,
     };
 
-    fetch("https://md112.herokuapp.com/savecontactinfo", {
+    fetch("https://apptej.herokuapp.com/savecontactinfo", {
       method: "POST",
       body: JSON.stringify({ name: name, email: email, message: msg }),
       headers: {
